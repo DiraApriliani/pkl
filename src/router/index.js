@@ -12,6 +12,11 @@ const routes = [
     name: 'Dashboard',
     component: defineAsyncComponent(() => import('../view/Dashboard.vue')),
   },
+  {
+    path: '/user',
+    name: 'User',
+    component: defineAsyncComponent(() => import('../view/User.vue')),
+  },
 ];
 
 const router = createRouter({
