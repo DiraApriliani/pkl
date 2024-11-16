@@ -101,7 +101,7 @@
                         <tr>
                             <th class="px-3 py-3 text-left text-xs font-xs">Web / App Name</th>
                             <th class="px-8 py-3 text-left text-xs font-xs">Report Title</th>
-                            <th class="text-center pl-8 py-3 text-xs font-xs">Status</th>
+                            <th class="text-center pl-11 py-3 text-xs font-xs">Status</th>
                             <th class="px-3 py-3 text-end text-xs font-xs">Action</th>
                         </tr>
                     </thead>
@@ -117,10 +117,10 @@
                             </td>
                         </tr>
                         <tr v-for="(item, index) in tableData" :key="index" class="hover:bg-gray-100 border-t">
-          <td class="py-2 px-4 text-[10px]">{{ item.Name }}</td>
+          <td class="py-2 px-3 text-[10px]">{{ item.Name }}</td>
           <td class="py-2 px-8 text-[10px]">{{ item.Contents }}</td>
           <td class="py-2 px-1 text-[10px]">
-            <div class="text-center font-semibold mx-auto -mr-2 w-[90px] h-[18px] border border-[#1677FF] text-[#1677FF] bg-[#E6F4FF] rounded-[3px]">
+            <div class="text-center font-semibold mx-auto -mr-2 w-[90px] h-[18px] border border-[#1677FF] text-[#1677FF] bg-[#E6F4FF] ">
               {{ item.Status }}
             </div>
           </td>
@@ -151,7 +151,7 @@
                         <tr>
                             <th class="px-3 py-3 text-left text-xs font-xs">Web / App Name</th>
                             <th class="px-8 py-3 text-left text-xs font-xs">Report Title</th>
-                            <th class="pl-8 py-3 text-center text-xs font-xs">Status</th>
+                            <th class="pl-11 py-3 text-center text-xs font-xs">Status</th>
                             <th class="px-3 py-3 text-end text-xs font-xs">Action</th>
                         </tr>
                     </thead>
@@ -168,7 +168,7 @@
                         </tr>
                     
                         <tr v-for="(item, index) in tableData" :key="index" class="hover:bg-gray-100 border-t">
-          <td class="py-2 px-4 text-[10px]">{{ item.Name }}</td>
+          <td class="py-2 px-3 text-[10px]">{{ item.Name }}</td>
           <td class="py-2 px-8 text-[10px]">{{ item.Contents }}</td>
           <td class="py-2 px-1 text-[10px]">
             <div class="text-center font-semibold mx-auto -mr-2 w-[90px] h-[18px] border border-[#1677FF] text-[#1677FF] bg-[#E6F4FF] rounded-[3px]">
