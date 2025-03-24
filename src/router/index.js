@@ -1,27 +1,42 @@
-import { defineAsyncComponent } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router';
+import { defineAsyncComponent } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    name: 'Login',
-    component: defineAsyncComponent(() => import('../view/Login.vue')),
+    path: "/",
+    redirect: "/login", 
   },
   {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: defineAsyncComponent(() => import('../view/Dashboard.vue')),
+    path: "/login",
+    name: "Login",
+    component: defineAsyncComponent(() => import("../view/Login.vue")),
   },
   {
-    path: '/user',
-    name: 'User',
-    component: defineAsyncComponent(() => import('../view/User.vue')),
+    path: "/user",
+    name: "User",
+    component: defineAsyncComponent(() => import("../view/User.vue")),
+    meta: { requiresAuth: true }, 
+  },
+  {
+    path: "/registrasi",
+    name: "Registrasi",
+    component: defineAsyncComponent(() => import("../view/Registrasi.vue")),
   },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
-})
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = localStorage.getItem("token"); 
+
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next("/login"); 
+  } else {
+    next(); 
+  }
+});
+
+export default router;
