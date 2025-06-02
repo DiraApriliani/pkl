@@ -1,33 +1,85 @@
-import avatar from "./user-avatar.png"
-import notification from "./Notification.svg"
-import logo from "./Logo.png"
-import mdi from "./mdi.svg"
-import mdi2 from "./mdi2.png"
-import gmail from "./gmail.png"
-import note from "./note.png"
-import button from "./button.png"
-import next from "./next.png" 
-import seedetail from "./seedetail.jpg"
-import pending from "./pending.png"
+// Import Gambar
 import logologin from "./logologin.png"
-import welcome from "./welcome.png"
-import teksLogin from "./teksLogin.png"
-import listapp from "./listapp.png"
+import logodash from "./logodash.png"
+import onsale from "./onsale.png"
+import best1 from "./best1.jpg"
+import best2 from "./best2.jpg"
+import best3 from "./best3.jpg"
+import iconkatalog from "./iconkatalog.png"
+import schoolputih from "./schoolputih.jpg"
+import schoolhitam from "./schoolhitam.jpg"
+import schoolhitput from "./schoolhitput.jpg"
+import original from "./original.jpg"
+import mensok from "./mensok.jpg"
+import kidsa from "./kidsa.jpg"
+import jempolmisty from "./jempolmisty.jpg"
+import kismis from "./kismis.jpg"
+import customBanner from "./customBanner.png"
 
-export{
-    avatar,
-    notification,
-    logo,
-    mdi,
-    mdi2,
-    gmail,
-    note,
-    button,
-    next,
-    seedetail,
-    pending,
-    logologin,
-    welcome,
-    teksLogin,
-    listapp
+// Export Gambar Biasa
+export {
+  logologin,
+  logodash,
+  onsale,
+  best1,
+  best2,
+  best3,
+  iconkatalog,
+  schoolputih,
+  schoolhitam,
+  schoolhitput,
+  original,
+  mensok,
+  kidsa,
+  jempolmisty,
+  kismis,
+  customBanner
 }
+
+// Export Data Produk per Kategori
+export const categories = [
+  {
+    slug: 'basic',
+    name: 'Basic',
+    products: [
+      { id: 1, name: 'School hitam putih', price: 30000, image: schoolhitput },
+      { id: 2, name: 'School putih', price: 30000, image: schoolputih },
+      { id: 3, name: 'School hitam', price: 30000, image: schoolhitam },
+      { id: 4, name: 'Mensak', price: 35000, image: mensok },
+      { id: 5, name: 'Misty jempol', price: 35000, image: jempolmisty },
+      { id: 6, name: 'Kidsa', price: 32000, image: kidsa },
+      { id: 7, name: 'Original', price: 40000, image: original },
+      { id: 8, name: 'Jempol', price: 35000, image: null },
+      { id: 9, name: 'Wudhu', price: 35000, image: null },
+      { id: 10, name: 'Jempol telapak misty', price: 35000, image: null },
+      { id: 11, name: 'Kanik kismis (Kaus kaki super ekonomis)', price: 25000, image: kismis }
+    ]
+  },
+  {
+    slug: 'infinity',
+    name: 'Infinity',
+    products: [
+      { id: 12, name: 'All motif', price: 45000, image: null },
+      { id: 13, name: 'Rilex sandal, flat shoes, balet socks', price: 40000, image: null }
+    ]
+  },
+  {
+    slug: 'innovate',
+    name: 'Innovate',
+    products: [
+      { id: 14, name: 'Anti licin', price: 50000, image: null },
+      { id: 15, name: 'Wupol', price: 55000, image: null },
+      { id: 16, name: 'Saqeena socks', price: 60000, image: null }
+    ]
+  },
+  {
+    slug: 'complement',
+    name: 'Complement',
+    products: [
+      { id: 17, name: 'Inner pants basic', price: 70000, image: null },
+      { id: 18, name: 'Inner pants wupol', price: 75000, image: null },
+      { id: 19, name: 'Legging pants', price: 80000, image: null },
+      { id: 20, name: 'Flat shoes jempol emoji series', price: 85000, image: null }
+    ]
+  }
+]

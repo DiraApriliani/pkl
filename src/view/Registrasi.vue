@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center bg-[#FF9934] min-h-screen p-4">
+  <div class="flex justify-center items-center bg-yellow-600 min-h-screen p-4">
 
     <!-- Form Register -->
     <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg w-full max-w-[850px] overflow-hidden">
@@ -19,7 +19,7 @@
         <el-input class="mt-4" v-model="no_hp" type="number" placeholder="No Telepon" />
         <el-input class="mt-4" v-model="password" type="password" placeholder="Password" show-password />
         <button
-          class="mt-3 w-full bg-[#FF9934] text-white py-2 rounded-md font-semibold text-center flex items-center justify-center"
+          class="mt-3 w-full bg-yellow-600 text-white py-2 rounded-md font-semibold text-center flex items-center justify-center"
           :class="{ 'opacity-50 cursor-not-allowed': loadingApiRegister }"
           :disabled="loadingApiRegister"
           @click="register"
@@ -77,9 +77,9 @@ const register = async () => {
 </script>
 
 <style lang="css">
-.border-red-500 {
-  border: 1px solid red !important;
-  border-radius: var(--rounded-md, 5px);
+.border-red-350 {
+  border: 5px solid red !important;
+  border-radius: var(--rounded-xs, 6px);
 }
 
 </style>

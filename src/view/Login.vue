@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center bg-[#FF9934] min-h-screen p-4">
+    <div class="flex justify-center items-center bg-yellow-600 min-h-screen p-4">
 
   <!-- Form Login -->
   <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg w-full max-w-[850px] overflow-hidden">
@@ -15,7 +15,7 @@
           <p class="text-[12px] ml-2 font-semibold">Remember me</p>
         </div>
           <button @click="login" :disabled="loadingApiLogin"
-          class="mt-2 w-full bg-[#FF9934] text-white py-2 rounded-md font-semibold text-center flex items-center justify-center"
+          class="mt-2 w-full bg-yellow-600 text-white py-2 rounded-md font-semibold text-center flex items-center justify-center"
           :class="{ 'opacity-50 cursor-not-allowed': loadingApiLogin }">
           <span v-if="!loadingApiLogin">Login</span>
           <svg v-else class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -28,107 +28,6 @@
             <span class="text-blue-500 cursor-pointer" @click="registrasi">Registrasi</span>
           </p>
         </div>
-
-  <!-- Button tambah bug -->
- <div class="flex my-4 ml-6 "> 
- <div class="cursor-pointer text-xs mr-2  "@click="tambahBug = true">
- <el-button type="warning" color="#FF9934" round>
-   <h1 class="text-white text-xs">Bug Report</h1> </el-button>
-  </div>
-  <el-dialog v-model="tambahBug" width="500px" class="text-center font-bold">
-    <h1 class="flex justify-center mb-4">Bug Report</h1>
-    <el-form :model="form" ref="bugForm">
-      <el-form-item class="ml-24" label="Email : ">
-        <input  v-model="form.email"
-          id="email"
-          type="email"
-          placeholder="Masukkan Email"
-          class="pl-2 w-[330px] h-[32px] border border-gray-200 rounded-[5px] focus:outline-none focus:ring-1
-           focus:ring-sky-400 invalid:focus:ring-red-500 "/>
-      </el-form-item>
-      <el-form-item class="ml-1" label="Web/App Name :" :label-width=146>
-        <el-select v-model="form.appId" placeholder="Pilih Web/App">
-          <el-option v-for="item in options" :key="item.id":label="item.app_name":value="item.id"/>
-        </el-select>
-      </el-form-item>
-      <el-form-item class="ml-1" label="Report Title : ":label-width=146>
-        <el-input v-model="form.reportTitle" autocomplete="off"placeholder="Masukkan Report Title"
-        />
-      </el-form-item>
-      <el-upload v-model:file-list="fileListBug" class="upload-demo" action="" accept=".jpg,.jpeg,.png"
-    :auto-upload="false" :on-preview="riviewGambar" :on-remove="hapusGambar":before-upload="validationGambar">  
-    <el-button color="#FF9934">
-      <h1 class="text-white">Tambah Gambar</h1>
-    </el-button>
-    <template #tip>
-      <div class="el-upload__tip">
-        Hanya file dengan format jpg/png dan ukuran kurang dari 500KB yang dapat diunggah.
-      </div>
-    </template>
-  </el-upload>
-  <el-dialog v-model="dialogForm" title="Preview Gambar" width="50%" >
-    <img v-if="previewImage" :src="previewImage" class="w-full" alt="Preview" /> 
-    <template #footer>
-      <el-button @click="dialogForm = false">Tutup</el-button>
-    </template>
-  </el-dialog>
-    </el-form>
-    <template #footer>
-      <div class="dialog-footer">
-        <el-button @click="closeDialog">Cancel</el-button>
-        <el-button color="#FF9934" @click="submitData"><h1 class="text-white">Submit</h1></el-button>
-      </div>
-    </template>
-  </el-dialog>
-
-  <!-- Button tambah request -->
-  <el-dialog v-model="tambahRequest" width="500px" class="text-center font-bold">
-    <h1 class="flex justify-center mb-4">Feature Request</h1>
-    <el-form :model="form" ref="bugForm">
-      <el-form-item class="ml-24" label="Email : ">
-        <input  v-model="form.email"
-          id="email"
-          type="email"
-          placeholder="Masukkan Email"
-          class="pl-2 w-[330px] h-[32px] border border-gray-200 rounded-[5px] focus:outline-none focus:ring-1
-           focus:ring-sky-400 invalid:focus:ring-red-500 "/>
-      </el-form-item>
-      <el-form-item class="ml-1" label="Web/App Name :" :label-width=146>
-        <el-select v-model="form.appId" placeholder="Pilih Web/App">
-          <el-option v-for="item in options":key="item.id":label="item.app_name":value="item.id"/>
-        </el-select>
-      </el-form-item>
-      <el-form-item class="ml-1" label="Report Title : ":label-width=146>
-        <el-input v-model="form.reportTitle" autocomplete="off" placeholder="Masukkan Report Title"/>
-      </el-form-item>
-      <el-upload v-model:file-list="fileListReq" class="upload-demo" action="" accept=".jpg,.jpeg,.png"
-    :auto-upload="false" :on-preview="riviewGambar">
-    <el-button color="#FF9934"><h1 class="text-white">Tambah Gambar</h1></el-button>
-    <template #tip>
-      <div class="el-upload__tip">
-        Hanya file dengan format jpg/png dan ukuran kurang dari 500KB yang dapat diunggah.
-      </div>
-    </template>
-  </el-upload>
-  <el-dialog v-model="dialogForm" title="Preview Gambar" width="50%" >
-    <img v-if="previewImage" :src="previewImage" class="w-full" alt="Preview" /> 
-    <template #footer>
-      <el-button @click="dialogForm = false">Tutup</el-button>
-    </template>
-  </el-dialog>
-    </el-form>
-    <template #footer>
-      <div class="dialog-footer">
-        <el-button @click="closeDialog">Cancel</el-button>
-        <el-button color="#FF9934" @click="submitData"><h1 class="text-white">Submit</h1></el-button>
-      </div>
-    </template>
-  </el-dialog>
-    <div @click="tambahRequest = true">
-      <el-button type="warning" color="#FF9934" round>
-        <h1 class="text-white text-xs">Feature Request</h1></el-button> 
-      </div>
-    </div>
         </div>      
         <div class="hidden md:block md:w-1/2">
         <img class="w-full h-full object-cover" :src="welcome" alt="Welcome Image" />
@@ -251,7 +150,7 @@ const registrasi = async () => {
 <style lang="css">
 .border-red-500 {
   border: 5px solid red !important;
-  border-radius: var(--rounded-md, 6px);
+  border-radius: var(--rounded-xs, 6px);
 }
 
 </style>

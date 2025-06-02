@@ -1,42 +1,61 @@
-import { defineAsyncComponent } from "vue";
+// src/router/index.js
+
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
     path: "/",
-    redirect: "/login", 
+    redirect: "/dashboard",
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: () => import("../view/Home.vue"),
+  },
+  {
+    path: "/onsale",
+    name: "Onsale",
+    component: () => import("../view/Onsale.vue"),
+  },
+  {
+    path: "/gift",
+    name: "Gift",
+    component: () => import("../view/Gift.vue"),
+  },
+  {
+    path: "/custom",
+    name: "Custom",
+    component: () => import("../view/Custom.vue"),
   },
   {
     path: "/login",
     name: "Login",
-    component: defineAsyncComponent(() => import("../view/Login.vue")),
+    component: () => import("../view/Login.vue"),
   },
   {
-    path: "/user",
-    name: "User",
-    component: defineAsyncComponent(() => import("../view/User.vue")),
-    meta: { requiresAuth: true }, 
+    path: "/admin",
+    name: "Admin",
+    component: () => import("../view/Admin.vue"),
+    meta: { requiresAuth: true },
   },
   {
     path: "/registrasi",
     name: "Registrasi",
-    component: defineAsyncComponent(() => import("../view/Registrasi.vue")),
+    component: () => import("../view/Registrasi.vue"),
+  },
+  {
+    path: "/kategori/:slug", // gunakan param dinamis
+    name: "Kategori",
+    component: () => import("../view/Kategori.vue"), // pastikan nama file sesuai
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
-
-router.beforeEach((to, from, next) => {
-  const isAuthenticated = localStorage.getItem("token"); 
-
-  if (to.meta.requiresAuth && !isAuthenticated) {
-    next("/login"); 
-  } else {
-    next(); 
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
   }
-});
+})
 
 export default router;

@@ -193,7 +193,7 @@
 <script setup>
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
-import Bug from '../components/Bug.vue'
+import Bug from '../components/Gift.vue'
 import Request from '../components/Request.vue'
 import { avatar, notification, logo, mdi, mdi2, listapp, note, gmail } from "../assets"
 import { MoreFilled } from '@element-plus/icons-vue'
