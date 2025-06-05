@@ -1,65 +1,24 @@
 <template>
-  <section id="onsale" class="bg-white dark:bg-gray-900 py-16">
+  <section
+    id="onsale"
+    class="w-full h-[80vh] flex flex-col justify-center items-center text-center px-4 py-10 rounded-xl"
+  >
     <!-- Judul -->
-    <h3 class="text-3xl sm:text-4xl font-bold text-center text-yellow-700 mb-8">
-      On Sale
+    <h3 class="text-3xl sm:text-4xl font-bold text-[#9d6727] mb-4">
+      Promo Spesial Segera Hadir!
     </h3>
 
-    <div class="max-w-[1450px] mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
-      <div
-        v-for="item in onSaleProducts"
-        :key="item.id"
-        class="bg-white dark:bg-gray-800 overflow-hidden relative group"
-      >
-        <!-- Label Diskon -->
-        <span class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 z-10 rounded">
-          Diskon
-        </span>
+    <!-- Teks deskripsi -->
+    <p class="text-base sm:text-lg font-serif text-gray-800 dark:text-gray-200 max-w-2xl mx-auto leading-relaxed">
+      Kami sedang menyiapkan promo menarik untukmu 🎉
+    </p>
 
-        <!-- Gambar Produk -->
-        <div class="relative w-full aspect-[3/4] overflow-hidden">
-          <!-- Gambar utama -->
-          <img
-            :src="item.image"
-            :alt="item.name"
-            class="absolute inset-0 w-full h-full object-cover opacity-100 transition-all duration-500 ease-in-out will-change-transform group-hover:opacity-0"
-          />
-          <!-- Gambar hover -->
-          <img
-            :src="item.hoverImage"
-            :alt="item.name + ' Hover'"
-            class="absolute inset-0 w-full h-full object-cover opacity-0 scale-100 transition-all duration-500 ease-in-out will-change-transform group-hover:opacity-100 group-hover:scale-110"
-          />
-        </div>
-
-        <!-- Info Produk -->
-        <div class="p-4">
-          <p class="text-sm text-gray-500 dark:text-gray-300 mb-1">{{ item.category }}</p>
-          <h4 class="font-semibold text-lg mb-1 dark:text-white">{{ item.name }}</h4>
-
-          <div>
-            <p class="text-sm line-through text-gray-400 dark:text-gray-500">
-              Rp {{ item.originalPrice.toLocaleString('id-ID') }}
-            </p>
-            <p class="text-yellow-600 font-bold text-lg">
-              Rp {{ item.price.toLocaleString('id-ID') }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <p
-      v-if="onSaleProducts.length === 0"
-      class="text-center mt-8 text-gray-500 dark:text-gray-400"
-    >
-      Belum ada produk yang sedang diskon saat ini.
+    <!-- CTA kecil -->
+    <p class="text-sm text-gray-500 italic mt-2">
+      Pantau terus halaman ini atau follow kami di Instagram untuk info terbaru.
     </p>
   </section>
 </template>
-
-
-
 
 <script setup>
 import {

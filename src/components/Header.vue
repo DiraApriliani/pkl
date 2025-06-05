@@ -9,16 +9,16 @@
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center space-x-8">
         <router-link
-      to="/dashboard"
-      class="nav-link"
-      exact-active-class="active-link"
-    >
-      Home
-    </router-link>
+          to="/dashboard"
+          class="nav-link text-gray-600 dark:text-white"
+          exact-active-class="active-link"
+        >
+          Home
+        </router-link>
 
         <router-link
           to="/onsale"
-          class="nav-link"
+          class="nav-link text-gray-600 dark:text-white"
           exact-active-class="active-link"
         >
           On Sale
@@ -26,7 +26,7 @@
 
         <router-link
           to="/gift"
-          class="nav-link"
+          class="nav-link text-gray-600 dark:text-white"
           exact-active-class="active-link"
         >
           Gifting
@@ -34,15 +34,15 @@
 
         <router-link
           to="/custom"
-          class="nav-link"
+          class="nav-link text-gray-600 dark:text-white"
           exact-active-class="active-link"
         >
           Custom
         </router-link>
 
-        <el-icon class="icon-large"><ShoppingCart /></el-icon>
-        <el-icon class="icon-large"><Search /></el-icon>
-        <button @click="toggleTheme" class="text-xl">
+        <el-icon class="icon-large text-gray-600 dark:text-white"><ShoppingCart /></el-icon>
+        <el-icon class="icon-large text-gray-600 dark:text-white"><Search /></el-icon>
+        <button @click="toggleTheme" class="text-xl text-gray-600 dark:text-white">
           {{ isDark ? '🌙' : '☀️' }}
         </button>
       </nav>
@@ -65,7 +65,7 @@
 
     <!-- Mobile nav -->
     <nav v-show="menuOpen" class="lg:hidden bg-white dark:bg-gray-900 shadow-md">
-      <ul class="flex flex-col space-y-2 p-4">
+      <ul class="flex flex-col space-y-2 p-4 text-gray-800 dark:text-white">
         <li>
           <router-link to="/" class="block" exact-active-class="active-link">Home</router-link>
         </li>
@@ -79,9 +79,11 @@
           <router-link to="/custom" class="block" exact-active-class="active-link">Custom</router-link>
         </li>
         <li class="flex items-center space-x-4 pt-2">
-          <el-icon><ShoppingCart /></el-icon>
-          <el-icon><Search /></el-icon>
-          <button @click="toggleTheme">{{ isDark ? '🌙' : '☀️' }}</button>
+          <el-icon class="text-gray-800 dark:text-white"><ShoppingCart /></el-icon>
+          <el-icon class="text-gray-800 dark:text-white"><Search /></el-icon>
+          <button @click="toggleTheme" class="text-gray-800 dark:text-white">
+            {{ isDark ? '🌙' : '☀️' }}
+          </button>
         </li>
       </ul>
     </nav>
@@ -112,12 +114,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.btn-primary {
-  @apply px-6 py-2 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition;
-}
 .nav-link {
   position: relative;
-  color: #4B5563; /* gray-600 */
   font-size: 1.25rem; /* text-xl */
   padding-bottom: 0.5rem; /* pb-2 */
   transition: color 0.3s;
@@ -131,13 +129,13 @@ onMounted(() => {
   bottom: -2px;
   height: 2px;
   width: 0;
-  background-color: #D97706; /* yellow-600 */
+  background-color: #9d6727; /* yellow-600 */
   transition: width 0.3s ease-in-out;
   pointer-events: none;
 }
 
 .nav-link:hover {
-  color: #D97706;
+  color: #9d6727;
 }
 
 .nav-link:hover::after {
@@ -145,14 +143,10 @@ onMounted(() => {
 }
 
 .active-link {
-  color: #D97706 !important;
+  color: #9d6727 !important;
 }
 
 .active-link::after {
-  width: 100% !important;
-}
-
-.active-link:hover::after {
   width: 100% !important;
 }
 </style>

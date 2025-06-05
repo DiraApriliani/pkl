@@ -1,12 +1,21 @@
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+  <div
+    :class="[
+      'grid gap-6',
+      items.length === 1
+        ? 'grid-cols-1'
+        : items.length === 2
+        ? 'grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2'
+        : 'grid-cols-2 sm:grid-cols-2 md:grid-cols-4'
+    ]"
+  >
     <div
       v-for="item in items"
       :key="item.id"
-      class="bg-white dark:bg-gray-800 p-4 text-left group"
+      class="p-4 text-left group"
     >
       <!-- Gambar dengan efek hover -->
-      <div class="relative w-[445px] h-[585px] overflow-hidden shrink-0">
+      <div class="relative w-full aspect-[445/585] overflow-hidden shrink-0">
         <!-- Gambar utama -->
         <img
           :src="item.image"
@@ -23,7 +32,13 @@
       </div>
 
       <!-- Info Produk -->
-      <h3 class="text-lg font-semibold text-gray-800 dark:text-white mt-4">{{ item.name }}</h3>
+      <h3 class="text-lg font-semibold text-gray-800 dark:text-white mt-4">
+        {{ item.name }}
+      </h3>
+      <!-- Deskripsi jika tersedia -->
+      <p v-if="item.description" class="text-sm text-gray-600 dark:text-gray-300 mt-1">
+        {{ item.description }}
+      </p>
       <p class="text-yellow-700 font-bold text-md mt-1">
         Rp {{ item.price.toLocaleString() }}
       </p>

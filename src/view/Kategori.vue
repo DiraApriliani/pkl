@@ -1,7 +1,7 @@
 <!-- src/pages/CategoryPage.vue -->
 <template>
   <div class="max-w-[1500px] mx-auto px-4 py-6">
-    <h2 class="text-2xl font-bold p-10 text-center">Kategori: {{ categoryName }}</h2>
+    <h2 class="text-2xl text-[#9d6727] font-bold p-10 text-center">Kategori: {{ categoryName }}</h2>
     <HeroBanner/>
     <ProductList :items="filteredProducts" />
 
@@ -51,21 +51,21 @@ const allProducts = [
   { id: 11, name: 'Kanik Kismis', price: 20000, image: kismis, hoverImage: best1, category: 'basic' },
 
   // Infinity
-  { id: 12, name: 'All Motif', price: 40000, image: best1, hoverImage: best2, category: 'infinity' },
-  { id: 13, name: 'Rilex Sandal', price: 42000, image: best2, hoverImage: best1, category: 'infinity' },
-  { id: 14, name: 'Flat Shoes', price: 38000, image: best2, hoverImage: best1, category: 'infinity' },
-  { id: 15, name: 'Balet Socks', price: 37000, image: best1, hoverImage: best2, category: 'infinity' },
+  { id: 1, name: 'All Motif', price: 40000, image: best1, hoverImage: best2, category: 'infinity' },
+  { id: 2, name: 'Rilex Sandal', price: 42000, image: best2, hoverImage: best1, category: 'infinity' },
+  { id: 3, name: 'Flat Shoes', price: 38000, image: best2, hoverImage: best1, category: 'infinity' },
+  { id: 4, name: 'Balet Socks', price: 37000, image: best1, hoverImage: best2, category: 'infinity' },
 
   // Innovate
-  { id: 16, name: 'Anti Licin', price: 30000, image: onsale, hoverImage: best1, category: 'innovate' },
-  { id: 17, name: 'Wupol', price: 32000, image: best2, hoverImage: best1, category: 'innovate' },
-  { id: 18, name: 'Saqeena Socks', price: 35000, image: best1, hoverImage: best2, category: 'innovate' },
+  { id: 1, name: 'Anti Licin', price: 30000, image: onsale, hoverImage: best1, category: 'innovate' },
+  { id: 2, name: 'Wupol', price: 32000, image: best2, hoverImage: best1, category: 'innovate' },
+  { id: 3, name: 'Saqeena Socks', price: 35000, image: best1, hoverImage: best2, category: 'innovate' },
 
   // Complement
-  { id: 19, name: 'Inner Pants Basic', price: 45000, image: best1, hoverImage: best2, category: 'complement' },
-  { id: 20, name: 'Inner Pants Wupol', price: 47000, image: best2, hoverImage: best1, category: 'complement' },
-  { id: 21, name: 'Legging Pants', price: 48000, image: best1, hoverImage: best2, category: 'complement' },
-  { id: 22, name: 'Flat Shoes Jempol Emoji Series', price: 46000, image: best2, hoverImage: best1, category: 'complement' },
+  { id: 1, name: 'Inner Pants Basic', price: 45000, image: best1, hoverImage: best2, category: 'complement' },
+  { id: 2, name: 'Inner Pants Wupol', price: 47000, image: best2, hoverImage: best1, category: 'complement' },
+  { id: 3, name: 'Legging Pants', price: 48000, image: best1, hoverImage: best2, category: 'complement' },
+  { id: 4, name: 'Flat Shoes Jempol Emoji Series', price: 46000, image: best2, hoverImage: best1, category: 'complement' },
 ];
 
 
